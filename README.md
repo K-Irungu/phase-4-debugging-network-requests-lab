@@ -61,13 +61,21 @@ developing your own process.
 ## Your Notes Here
 
 - Add a new toy when the toy form is submitted
+  ERROR: NameError (uninitialized constant ToysController::Toys)
 
-  - How I debugged:
+- How I debugged:
+  SOLUTION: I corrected the spelling of Toy from Toys to Toy in Toys#create action.
+
 
 - Update the number of likes for a toy
+  ERROR: VM88:1 Uncaught (in promise) SyntaxError: Unexpected end of JSON input
 
-  - How I debugged:
+- How I debugged:
+  SOLUTION: Looked through toys_controller.rb to make sure the correct type of data was being returned. No json data was being returned. I added the following line of code to return json data: (render json: toy)
+
 
 - Donate a toy to Goodwill (and delete it from our database)
+  ERROR: DELETE http://localhost:4000/toys/1 404 (Not Found)
 
-  - How I debugged:
+ - How I debugged:
+  I checked the routes to ensure that the destroy route was present. It was not. I then included the :destroy route 
